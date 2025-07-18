@@ -1,0 +1,341 @@
+/* A4 size in CSS (210mm x 297mm) */
+@page {
+    size: A4;
+    margin: 0;
+}
+
+:root {
+    --primary-color: #28285B;
+    --primary-dark: #1F1F47;
+    --caution-light: #FFEB78;
+    --caution-main: #956F00;
+    --text-color: #212B36;
+    --secondary-text: #637381;
+    --background-light: #f8f9fa;
+    --background-white: #ffffff;
+    --border-color: #e0e0e0;
+    --card-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 210mm;
+    height: 297mm;
+    background-color: white;
+    font-family: 'Inter', 'Arial', sans-serif;
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+.brochure {
+    width: 210mm;
+    height: 297mm;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Header styling */
+header {
+    position: relative;
+    height: 100mm;
+    color: white;
+    display: flex;
+    align-items: flex-end; /* Align content to the bottom */
+    justify-content: flex-start; /* Align content to the left */
+    padding: 10mm 15mm;
+    overflow: hidden; /* Ensures the image doesn't bleed out */
+    z-index: 10; /* Ensure header is on top */
+}
+
+/* Header background with wave */
+.header-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill; 
+    z-index: 1;
+}
+
+.sunburst-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: auto;
+    opacity: 1;
+    z-index: 1; /* Sits above the background but below content */
+}
+
+.header-content {
+    position: absolute;
+    top: 20mm;
+    left: 15mm;
+    z-index: 2; /* Sits on top of the image */
+    text-align: left;
+    width: 70%;
+}
+
+.logo-container {
+    margin-bottom: 2mm;
+    max-width: 45%;
+}
+
+.logo-container svg {
+    height: 36px;
+    width: auto;
+}
+
+.tagline {
+    font-size: 18px;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Shadow for readability */
+    margin: 0;
+    max-width: 40%;
+}
+
+.mission-section {
+    padding: 2mm 5mm 10mm;
+    background-color: var(--background-white);
+}
+
+.mission-section .section-title {
+    margin-top: 0;
+}
+
+/* Hero section */
+.hero-section {
+    display: flex;
+    padding: 2mm 15mm 4mm; /* Further reduced top padding */
+    background-color: var(--background-white);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    width: 100%; /* Expanded to full width since sunburst is gone */
+    padding: 2mm 0; /* Further reduced padding */
+}
+
+.hero-content h1 {
+    font-size: 28px;
+    margin-bottom: 5mm;
+    color: var(--primary-color);
+    margin-bottom: 5mm;
+    position: relative;
+}
+
+.hero-content h1::after {
+    content: '';
+    position: absolute;
+    bottom: -2mm;
+    left: 0;
+    width: 15mm;
+    height: 1mm;
+    background-color: var(--caution-light);
+    border-radius: 1mm;
+}
+
+.hero-content p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.hero-image {
+    width: 40%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sunburst {
+    width: 140%;
+    height: auto;
+    opacity: 0.35;
+    transform: rotate(-15deg);
+    filter: saturate(0.9);
+}
+
+/* Wave separator between header and mission section - Image-based curve */
+.wave-separator {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    line-height: 0; /* Remove any space between header and image */
+    margin-top: -1px; /* Ensure connection with header */
+}
+
+.curve-image {
+    width: 100%;
+    display: block; /* Ensures proper rendering without gaps */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Mission section */
+.mission-section {
+   /* padding: 10mm 15mm 5mm; */ /* Added top padding since hero section is gone */
+    margin-top: -10mm; /* Removed negative margin since there's no hero section to overlap */
+    background-color: var(--background-white); /* Changed to white background */
+    position: relative;
+    z-index: 1;
+}
+
+.section-title {
+    font-size: 24px; /* Increased from 22px */
+    text-align: center;
+    margin-bottom: 2mm; /* Reduced from 8mm to tighten layout */    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.mission-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 5mm;
+    margin-top: 8mm; /* Added top margin for spacing */
+}
+
+.mission-card {
+    flex: 1;
+    background-color: #f7f7f8; /* Lighter gray background for cards */
+    padding: 6mm;
+    border-radius: 2mm;
+    box-shadow: 0 1mm 3mm rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.mission-card:hover {
+    transform: translateY(-2mm);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.mission-card h3 {
+    font-size: 18px; /* Increased from 16px */
+    margin-bottom: 4mm; /* Increased from 3mm */
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.mission-card p {
+    font-size: 16px; /* Increased from 15px */
+    line-height: 1.6; /* Slightly increased line height */
+    margin: 0;
+}
+
+/* Features section */
+.features-section {
+    display: flex;
+    padding: 5mm 15mm; /* Reduced padding from 10mm to 5mm */
+    background-color: var(--background-light);
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid var(--border-color);
+}
+
+.features-content {
+    flex: 3;
+    padding-right: 10mm;
+}
+
+.features-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.features-list li {
+    position: relative;
+    padding-left: 8mm;
+    margin-bottom: 4mm;
+    font-size: 16px;
+}
+
+.features-list li:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4mm;
+    height: 4mm;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    opacity: 0.85;
+}
+
+.features-list li:after {
+    content: '✓';
+    position: absolute;
+    left: 1.5mm;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* QR code section */
+.qr-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-white);
+    border-radius: 3mm;
+    padding: 2mm 5mm;
+    border: 1px solid var(--border-color);
+    max-height: 45mm;
+    margin: auto 0;
+}
+
+.qr-section h2 {
+    font-size: 18px;
+    color: var(--primary-color);
+    margin-bottom: 2mm;
+    text-align: center;
+}
+
+.qr-code {
+    width: 30mm;
+    height: auto;
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+    padding: 5mm 15mm;
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    font-size: 14px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Print styles */
+@media print {
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .brochure {
+        width: 210mm;
+        height: 297mm;
+    }
+}
