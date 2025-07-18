@@ -48,4 +48,3 @@ You can customize any brochure by:
 - The `index.html` file focuses on text content and layout planning, serving as a foundation for determining appropriate text amounts.
 - There are two complete brochure designs in this repository that can be used as-is or as templates.
 - To add more designs, duplicate an existing HTML file, rename it, and modify its content and styles.
-- The current designs use placeholder content that should be replaced with actual BRC Analytics information.
