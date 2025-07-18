@@ -1,15 +1,16 @@
-# BRC Analytics Brochure
+# BRC Analytics Brochures
 
-This is an HTML brochure for BRC Analytics designed to be printed as an A4 PDF.
+This repository contains brochures for BRC Analytics designed to be printed as A4 PDFs. The `index.html` file focuses primarily on text content and finding an optimal amount of text to fit on the page, while there are two actual brochure designs in the repository.
 
-## Viewing the Brochure
+## Viewing the Brochures
 
-1. Open the `index.html` file in any modern web browser.
-2. The brochure is formatted to A4 size (210mm x 297mm).
+1. Open any of the HTML files (including `index.html`) in any modern web browser.
+2. All brochures are formatted to A4 size (210mm x 297mm).
+3. The `index.html` file contains primarily text content for layout planning, while the other two files are complete brochure designs.
 
 ## Saving as PDF
 
-To save the brochure as a PDF:
+To save any brochure as a PDF:
 
 ### Chrome/Edge:
 1. Open `index.html` in Chrome or Edge
@@ -35,12 +36,16 @@ To save the brochure as a PDF:
 
 ## Customization
 
-You can customize the brochure by:
-- Editing the content in `index.html`
-- Modifying styles in the `<style>` section or in the separate `styles.css` file
+You can customize any brochure by:
+- Editing the content in the respective HTML file
+- Modifying styles in the `<style>` section or in the separate CSS files
 - Adding images by inserting `<img>` tags with appropriate paths
+- Creating new brochure designs by duplicating and modifying existing HTML and CSS files
 
 ## Notes
 
-- The brochure is designed with proper print media queries to ensure it looks correct when printed.
-- The current design uses placeholder content that should be replaced with actual BRC Analytics information.
+- All brochures are designed with proper print media queries to ensure they look correct when printed.
+- The `index.html` file focuses on text content and layout planning, serving as a foundation for determining appropriate text amounts.
+- There are two complete brochure designs in this repository that can be used as-is or as templates.
+- To add more designs, duplicate an existing HTML file, rename it, and modify its content and styles.
+- The current designs use placeholder content that should be replaced with actual BRC Analytics information.
