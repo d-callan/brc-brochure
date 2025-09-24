@@ -1,0 +1,276 @@
+/* Scientific Poster Styles */
+:root {
+    --primary-color: #3a1c71;
+    --secondary-color: #5c4d9a;
+    --accent-color: #7986cb;
+    --text-color: #333;
+    --light-bg: #f8f9fa;
+    --border-color: #ddd;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #eee;
+    overflow-y: auto;
+}
+
+body {
+    padding: 20px;
+}
+
+.poster {
+    width: 36in; /* 36 inches width */
+    height: auto; /* Allow height to adjust to content */
+    min-height: 48in; /* 48 inches height */
+    margin: 20px auto;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    grid-gap: 20px;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+/* Header Section */
+.poster-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--primary-color);
+    text-align: center;
+    position: relative;
+}
+
+.poster-header::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 8px;
+    background-color: var(--accent-color);
+    border-radius: 4px;
+}
+
+.poster-title {
+    font-size: 50px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.poster-subtitle {
+    font-size: 32px;
+    font-weight: 500;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.logo-container {
+    margin-bottom: 20px;
+}
+
+/* Content Section */
+.poster-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+}
+
+.section {
+    background-color: var(--light-bg);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--accent-color);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-color);
+}
+
+.feature-list {
+    list-style-type: none;
+    margin-left: 0;
+}
+
+.feature-item {
+    font-size: 24px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.feature-item::before {
+    content: "•";
+    color: var(--accent-color);
+    font-size: 30px;
+    margin-right: 15px;
+}
+
+/* Collaboration Section */
+.collaboration {
+    grid-column: 1 / -1;
+    background-color: var(--light-bg);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.collaboration-title {
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.collaboration-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 3px;
+    background-color: var(--accent-color);
+    border-radius: 1.5px;
+}
+
+.collaboration-content {
+    font-size: 24px;
+    max-width: 80%;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* Footer Section */
+.poster-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    border-top: 2px solid var(--primary-color);
+}
+
+.contact-info {
+    font-size: 20px;
+}
+
+.qr-code {
+    width: 100px;
+    height: 100px;
+}
+
+/* Sunburst Graphic */
+.sunburst-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    flex-grow: 1;
+}
+
+.sunburst {
+    max-width: 300px;
+    max-height: 300px;
+    object-fit: contain;
+}
+
+/* Feature Sections */
+.feature-section {
+    margin-bottom: 30px;
+    padding-left: 15px;
+    border-left: 3px solid var(--accent-color);
+}
+
+.feature-heading {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.feature-description {
+    font-size: 22px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+/* Responsive Adjustments */
+@media print {
+    body {
+        background-color: white;
+        padding: 0;
+    }
+    
+    .poster {
+        width: 100%;
+        height: auto;
+        box-shadow: none;
+    }
+}
+
+/* For screen display scaling */
+@media screen and (max-width: 1400px) {
+    html, body {
+        overflow-x: hidden;
+    }
+    
+    .poster {
+        transform: scale(0.5);
+        transform-origin: top center;
+        margin-bottom: 50px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .poster {
+        transform: scale(0.35);
+        transform-origin: top center;
+        margin-bottom: 100px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .poster {
+        transform: scale(0.25);
+        transform-origin: top center;
+        margin-bottom: 150px;
+    }
+}

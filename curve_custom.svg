@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1080" viewBox="0 0 1440 1080" preserveAspectRatio="none">
+  <style>
+    .blue { fill: #28285B; }
+    .white { fill: #ffffff; }
+  </style>
+
+  <!-- Background white -->
+  <rect width="1440" height="1080" class="white"/>
+
+  <!-- Left side with one dramatic S curve -->
+  <path class="blue" d="
+    M 0 1080
+    C 1080 880, 250 0, 1440 0
+    L 0 0 Z
+  "/>
+</svg>
+
