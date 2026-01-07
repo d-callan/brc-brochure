@@ -136,7 +136,6 @@ header::before {
     text-shadow: none;
 }
 
-/* Add anchor tag status options */
 .header-subtitle, .header-subtitle:visited, .header-subtitle:hover, .header-subtitle:active {
     font-size: 56px;
     color: #ccc;
