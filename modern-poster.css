@@ -136,6 +136,15 @@ header::before {
     text-shadow: none;
 }
 
+.header-subtitle, .header-subtitle:visited, .header-subtitle:hover, .header-subtitle:active {
+    font-size: 56px;
+    color: #ccc;
+    margin-top: 40px;
+    max-width: 80%;
+    text-shadow: none;
+    text-decoration: none;
+}
+
 .mission-section {
     padding: 30px;
     background-color: var(--light-bg);
